@@ -1,23 +1,22 @@
 package com.example.app_tracker
 
 import android.view.LayoutInflater
-import android.view.SurfaceControl.Transaction
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.app_tracker.databinding.ItemTransactionBinding
 
 class TransactionAdapter(
- var transactions: List<Transaction>
+    private val transactions: List<Transaction>
 ): RecyclerView.Adapter<TransactionAdapter.TransactionViewHolder>(){
 
-    inner class TransactionViewHolder(itemView: View):RecyclerView.ViewHolder(itemView)
+    inner class TransactionViewHolder(val binding: ItemTransactionBinding):RecyclerView.ViewHolder(binding.root)
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TransactionViewHolder {
-        val view: View = LayoutInflater
-            .from(parent.context)
-            .inflate(R.layout.item_transaction,parent,false)
-        return  TransactionViewHolder(view)
+        val layoutInflater: LayoutInflater = LayoutInflater.from(parent.context)
+        val binding = ItemTransactionBinding.inflate(layoutInflater, parent, false)
+
+        return  TransactionViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
@@ -25,8 +24,9 @@ class TransactionAdapter(
     }
 
     override fun onBindViewHolder(holder: TransactionViewHolder, position: Int) {
-        holder.itemView.apply {
-            tvItem.text
+        holder.binding.apply {
+            tvItem.text = transactions[position].title
+            amountItem.text = transactions[position].amount.toString()
         }
     }
 
