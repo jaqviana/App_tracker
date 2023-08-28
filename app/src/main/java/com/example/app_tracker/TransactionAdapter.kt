@@ -3,6 +3,7 @@ package com.example.app_tracker
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.app_tracker.data.Transaction
 import com.example.app_tracker.databinding.ItemTransactionBinding
 
 class TransactionAdapter(

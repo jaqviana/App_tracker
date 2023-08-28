@@ -7,6 +7,15 @@
     android:background="@drawable/rectangle_9"
     tools:context=".AddTransaction">
 
+    <ImageView
+        android:id="@+id/rectangle_2"
+        android:layout_width="match_parent"
+        android:layout_height="355dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/rectangle_225"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/value" />
 
     <TextView
         android:id="@+id/add_transaction"
@@ -36,70 +45,62 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:text="$9400.0"
-        android:textSize="40sp"
+        android:text="$150.00"
+        android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/how_much" />
 
-    <ImageView
-        android:id="@+id/rectangle_2"
-        android:layout_width="match_parent"
-        android:layout_height="355dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/rectangle_225"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/value" />
 
     <EditText
-        android:id="@+id/editTitle"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:layout_marginTop="28dp"
-        android:gravity="top"
+        android:id="@+id/editTitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/input_field"
         android:hint="Item"
-        android:textSize="14dp"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_2"
-        tools:layout_editor_absoluteX="16dp" />
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/value"
+        android:layout_marginVertical="80dp"/>
 
     <EditText
-        android:id="@+id/editAmount"
-        android:layout_width="match_parent"
-        android:layout_height="69dp"
-        android:gravity="top"
-        android:hint="Amount"
-        android:textSize="14dp"
-        app:layout_constraintTop_toBottomOf="@+id/editTitle"
-        tools:layout_editor_absoluteX="0dp" />
+        android:id="@+id/editTitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/input_field"
+        android:hint="Description"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTitle1"
+        android:layout_marginVertical="50dp"/>
 
     <EditText
-        android:id="@+id/editCategoria"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:gravity="top"
-        android:hint="Income/Expense"
-        android:textSize="14dp"
-        app:layout_constraintTop_toBottomOf="@+id/editAmount"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <EditText
-        android:id="@+id/editNote"
-        android:layout_width="match_parent"
-        android:layout_height="78dp"
-        android:gravity="top"
-        android:hint="Note"
-        android:textSize="14dp"
-        app:layout_constraintTop_toBottomOf="@+id/editCategoria"
-        tools:layout_editor_absoluteX="0dp" />
+        android:id="@+id/editTitle3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="50dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/input_field"
+        android:hint="Income or expense"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTitle2" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ADD TRANSACTION"
-        app:layout_constraintTop_toBottomOf="@+id/editNote"
-        tools:layout_editor_absoluteX="0dp" />
+        android:background="@drawable/button_large"
+        android:padding="16dp"
+        android:text="ADD"
+        android:textColor="@color/white"
+        app:backgroundTint="#7F3DFF"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

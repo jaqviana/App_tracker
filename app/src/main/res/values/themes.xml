@@ -6,4 +6,6 @@
     </style>
 
     <style name="Theme.App_tracker" parent="Base.Theme.App_tracker" />
+
+
 </resources>
