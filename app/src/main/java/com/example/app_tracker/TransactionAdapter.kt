@@ -7,10 +7,14 @@ import com.example.app_tracker.data.Transaction
 import com.example.app_tracker.databinding.ItemTransactionBinding
 
 class TransactionAdapter(
-    private val transactions: List<Transaction>
+    private var transactions: List<Transaction>
 ): RecyclerView.Adapter<TransactionAdapter.TransactionViewHolder>(){
 
     inner class TransactionViewHolder(val binding: ItemTransactionBinding):RecyclerView.ViewHolder(binding.root)
+    fun submitList(transactions: List<Transaction>){
+        this.transactions = transactions
+        notifyDataSetChanged()
+    }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TransactionViewHolder {

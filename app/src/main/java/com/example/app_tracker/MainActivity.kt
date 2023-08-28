@@ -23,28 +23,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        /*val dataBase = Room.databaseBuilder(
-            applicationContext,
-            AppDataBase::class.java, "transactions-database"
-        ).build()*/
 
-        val dao = dataBase.taskDao()
-
-        val transaction = Transaction(title = "Title0", amount = 100)
-
-        CoroutineScope(IO).launch {
-        val myDataBaseList: LiveData<List<Transaction>> = dao.getAll()
-
-       }
+        val dataBase = (application as TransactionApplication).getAppDataBase().transactionDao()
 
 
-        val itemList = listOf<Transaction>(
-            Transaction(0,"Title0",100 ),
-            Transaction(1,"Title2",200 ),
-            Transaction(2,"Title3",300 )
 
-        )
-        val adapter: TransactionAdapter = TransactionAdapter(itemList)
+        val adapter: TransactionAdapter = TransactionAdapter(listOf())
+        viewModel.taskListLiveData.observe(this) {
+            adapter.submitList(it)
+        }
+
 
         val rvTransactions: RecyclerView = findViewById(R.id.rvList)
         rvTransactions.adapter = adapter
@@ -58,11 +46,10 @@ class MainActivity : AppCompatActivity() {
 
     }
     private fun openAddTransaction(transaction: Transaction? = null){
-        val intent = AddTransaction.start(this, transaction) //precisa de uma trasacation para abrir a AddTransaction
+        val intent = AddTransaction.start(this)
         startActivity(intent)
 
 
 }
     }
 
-//ver linha 25 nao tinha q ser val dao = dataBase.transactionDao() e val dao = dataBase.taskDao()?
