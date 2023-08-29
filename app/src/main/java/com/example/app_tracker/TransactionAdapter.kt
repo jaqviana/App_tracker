@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app_tracker.data.Transaction
 import com.example.app_tracker.databinding.ItemTransactionBinding
+import kotlin.reflect.KFunction1
 
 class TransactionAdapter(
     private var transactions: List<Transaction>
