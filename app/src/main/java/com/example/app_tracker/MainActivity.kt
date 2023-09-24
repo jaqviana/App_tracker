@@ -27,8 +27,8 @@ class MainActivity : AppCompatActivity() {
         TransactionViewModel.create(application)
     }
 
-    //VER QUE PARTE DA AULA QUE ELE FEZ ESSE CODIGO - O Q SIGNIFICA?
-    private val startForResult = registerForActivityResult(
+    //A aula que foi feito essa parte foi a aula "Pegando resultado de uma activity" 18:25 copia o codigo da documentacao e faz implementacao de uma tela para outra (call activity), como nao vou passar uma intent entao vou deletar
+    /*private val startForResult = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result: ActivityResult ->
         if (result.resultCode == Activity.RESULT_OK) {
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
             viewModel.execute(transactionAction)
         }
-    }
+    }*/
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
